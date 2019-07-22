@@ -1,0 +1,26 @@
+{
+  "homepage": "http://007parthgoel.github.io/react-complete-guide",
+  "name": "react-complete-guide",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "1.1.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "ghpages -d build"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
