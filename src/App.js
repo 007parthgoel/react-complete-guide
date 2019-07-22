@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from'./App.css';
 import Person from './Person/Person';
-import Radium,{StyleRoot} from 'radium';
 
 class App extends Component {
   state = {
@@ -66,10 +65,6 @@ class App extends Component {
         border:'1px solid blue',
         padding: '8px',
         cursor:'pointer',
-        ':hover':{
-          backgroundColor: 'lightgreen',
-          color:'black'
-        }
     };
 
     let persons=null;
@@ -95,31 +90,28 @@ class App extends Component {
     }
 
     //let classes=['red','bold'].join(' '); 
-    let classes=[];
+    let assingedClasses=[];
     if(this.state.persons.length<=2){
-      classes.push('red');  //class=['red'];
+      assingedClasses.push(classes.red);  //class=['red'];
     }
     if(this.state.persons.length<=1){
-      classes.push('bold');  //class=['red','bold'];
+      assingedClasses.push(classes.bold);  //class=['red','bold'];
     }
 
     return (
-      <StyleRoot>
-      <div className="App">
-       <h1>Hi i am a react app</h1>
-       <p className={classes.join(' ')}>this is really working</p>
+      <div className={classes.App}>
+       <h1>Hi i am a React app</h1>
+       <p className={assingedClasses.join(' ')}>this is really working</p>
        <button 
          style={style}
          onClick={this.togglePersonsHandler}>Toggle Person</button>
        {/* <button onClick={this.switchNamehandler.bind(this,'sameer')}>Switch Name</button> */}
        {persons} 
-     
       </div>
-      </StyleRoot>
     );
     //return React.createElement('div',{className:'App'},React.createElement('h1',null,'Hi i am a react'));
 
   }
 } 
 
-export default Radium(App);
+export default App;
