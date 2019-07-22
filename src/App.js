@@ -57,17 +57,9 @@ class App extends Component {
 
   }
  
-  render() {
-    const style={
-        color: 'white',
-        backgroundColor:'green',
-        font: 'inherit',
-        border:'1px solid blue',
-        padding: '8px',
-        cursor:'pointer',
-    };
-
+  render() {  
     let persons=null;
+    let btnClass='';
 
     if(this.state.showPersons){
       persons=(
@@ -82,11 +74,7 @@ class App extends Component {
           })}
         </div>
       );
-      style.backgroundColor='red';
-      style[':hover']={
-        backgroundColor: 'salmon',
-        color:'black'
-      }
+      btnClass=classes.Red;
     }
 
     //let classes=['red','bold'].join(' '); 
@@ -103,7 +91,7 @@ class App extends Component {
        <h1>Hi i am a React app</h1>
        <p className={assingedClasses.join(' ')}>this is really working</p>
        <button 
-         style={style}
+       className={btnClass}
          onClick={this.togglePersonsHandler}>Toggle Person</button>
        {/* <button onClick={this.switchNamehandler.bind(this,'sameer')}>Switch Name</button> */}
        {persons} 
